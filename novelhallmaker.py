@@ -1,11 +1,22 @@
 import requests
 import time
-str1=""
+from urllib.request import Request, urlopen
+from bs4 import BeautifulSoup
+name=""
+s1=''''''
+x=s1.split()
+for i in range(8,-1,-1):
+    x.append(x[i])
+for i in range(8, -1, -1):
+    x.pop(0)
+str1=''
+for i in x:
+    str1=str1+i+","
+str1=str1.rstrip(",")
 x=str1.split(",")
-f= open("", "a+", encoding="utf-8")
+f= open(f"{name}.txt", "a+", encoding="utf-8")
 for i in range(0,len(x)):
-  from urllib.request import Request, urlopen
-  from bs4 import BeautifulSoup
+
 
   url = f"{x[i]}"
   req = Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36'})
@@ -28,10 +39,9 @@ for i in range(0,len(x)):
   text = '\n'.join(chunk for chunk in chunks if chunk)
   sl = text.find("Turn off\nReset")
   sm= text.find("Chapter")
-  sub_list = ["", ]
+  sub_list = ["/",'"',"'",".","!","@","#","$","%","^","&","*"]
   for sub in sub_list:
     text = text.replace(sub, ' ')
   res = " ".join(text.split())
   f.write(text[sm:sm+15])
   f.write(text[sl+14:-362])
-
