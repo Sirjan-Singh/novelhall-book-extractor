@@ -28,7 +28,7 @@ for i in range(0,len(x)):
   text = '\n'.join(chunk for chunk in chunks if chunk)
   sl = text.find("Turn off\nReset")
   sm= text.find("Chapter")
-  sub_list = ["This chapter contain R18 scenes…", ]
+  sub_list = ["", ]
   for sub in sub_list:
     text = text.replace(sub, ' ')
   res = " ".join(text.split())
