@@ -2,7 +2,7 @@ import requests
 import time
 str1=""
 x=str1.split(",")
-f= open("konoha-hypocrite.txt", "a+", encoding="utf-8")
+f= open("", "a+", encoding="utf-8")
 for i in range(0,len(x)):
   from urllib.request import Request, urlopen
   from bs4 import BeautifulSoup
