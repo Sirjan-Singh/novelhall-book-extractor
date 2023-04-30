@@ -37,9 +37,12 @@ for i in range(0,len(x)):
   chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
   # drop blank lines
   text = '\n'.join(chunk for chunk in chunks if chunk)
-  sl = text.find("Turn off\nReset")
+  sl = text.find("Turn off\nReset") 
+  # start adding text
   sm= text.find("Chapter")
+  # stop adding text
   sub_list = ["/",'"',"'",".","!","@","#","$","%","^","&","*"]
+  # exeption for text
   for sub in sub_list:
     text = text.replace(sub, ' ')
   res = " ".join(text.split())
